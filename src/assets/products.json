@@ -1,0 +1,7 @@
+[
+    {"idProduct": "000-000-000-000","name": "produto 0", "value": "123.56"},
+    {"idProduct": "111-111-111-111","name": "produto 1", "value": "333.56"},
+    {"idProduct": "222-222-222-222","name": "produto 2", "value": "444.56"},
+    {"idProduct": "333-333-333-333","name": "produto 3", "value": "555.56"},
+    {"idProduct": "444-444-444-444","name": "produto 4", "value": "666.56"} 
+]
