@@ -14,16 +14,17 @@ export class ProductFormComponent {
   constructor(private formBuilder : FormBuilder, 
     private productService : ProductsService,
     private location: Location){
+
     this.form = this.formBuilder.group({
       idProduct: [null],
       name: [null],
       value: [null]
-    })
+    }) 
+   
   }
 
   onSubmit(){
     this.productService.save(this.form.value).subscribe(volta => {this.onCancel()});
-
   }
 
   onCancel(){

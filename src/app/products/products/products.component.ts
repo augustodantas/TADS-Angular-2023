@@ -12,12 +12,22 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 export class ProductsComponent implements OnInit {
   products : Observable<Product[]>;
 
-  displayedColumns = ['idProduct', 'name', 'value',"actions"]
+  displayedColumns = ['idProduct', 'name', 'value',"actions"];
+
+  private webSocket: WebSocket;
   
   constructor(private productService: ProductsService, 
     private router: Router,
     private route: ActivatedRoute){
+
+    this.webSocket = new WebSocket('ws://localhost:8080/stocks');
+    this.webSocket.onmessage = (event) => {
+        console.log(JSON.parse(event.data));
+    }; 
+
     this.products = this.productService.list();
+
+
 
   }
   ngOnInit(): void {
